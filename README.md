@@ -1,8 +1,9 @@
 # MultiformNode
 Simple example NODE JS
-  -Express(Jade)
-  -MongoDB
-
+<ul>
+<li>Express(Jade)</li>
+<li>MongoDB</li>
+</ul>
 # How to run?
 --Run MongoDB
 
@@ -12,3 +13,5 @@ cd multiform
 npm install
 npm start
 ```
+
+Open <a href='http://localhost:3000'>http://localhost:3000</a>
