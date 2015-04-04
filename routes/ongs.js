@@ -109,6 +109,35 @@ router.post('/updateong', function(req, res) {
             res.location("/ongs/onglist");
             // E irá redirecionar para a página a seguir
             res.redirect("/ongs/onglist");
+
+        }
+    });
+});
+
+
+/* GET to Delete ONG */
+router.get('/deleteong/:id', function(req, res) {
+
+    // Set variavel interna do DB
+    var db = req.db;
+    var ObjectId = require('mongodb').ObjectID;
+    var theID = req.params.id;
+
+    // Setar a coleção
+    var collection = db.get('ongcollection');
+
+    // Enviar para o DB
+    collection.remove({_id: ObjectId(theID)}, function (err, doc) {
+        if (err) {
+            // If it failed, return error
+            res.send("There was a problem removing the information to the database.");
+        }
+        else {
+            // Se funcionar, não aparecerá o local /delete na barra do navegador
+            res.location("/ongs/onglist");
+            // E irá redirecionar para a página a seguir
+            res.redirect("/ongs/onglist");
+
         }
     });
 });

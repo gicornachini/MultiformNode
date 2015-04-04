@@ -5,22 +5,29 @@ block content
 		Lista de ONG's Cadastradas
 	hr
 	br
-	table
-		thead
-			tr
-				td Nome
-				td Email
-				td Area
-				td Telefone
-				td Ações
-		tbody
+	div(class="container")
+		table(class='table')
+			thead
+				tr
+					td Nome
+					td Email
+					td Area
+					td Telefone
+					td Ações
+			tbody
 			each ong, i in onglist
-				tr				
+				tr
 					td #{ong.nome}
 					td #{ong.email}
 					td #{ong.area}
 					td #{ong.telefone}
 					td
-						a(href="/ongs/editar/#{ong._id}") Editar
+						a(href="/ongs/editar/#{ong._id}")
+							button(type='button', class='btn btn-warning btn-sm')
+								span(class='glyphicon glyphicon-edit') Editar
+						<space>
+						a(href="/ongs/deleteong/#{ong._id}")
+							button(type='button', class='btn btn-danger btn-sm')
+								span(class='glyphicon glyphicon-remove' aria-hidden="true") Deletar
 	hr
 	a(href="/ongs") Voltar

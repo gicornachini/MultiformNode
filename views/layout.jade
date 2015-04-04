@@ -1,7 +1,17 @@
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+    body
+    div(class="navbar navbar-inverse navbar-fixed-top")
+        div(class="container")
+            div(class="navbar-header")
+                a(href="/" class="navbar-brand") Multiform
+            div(class="navbar-collapse collapse" id="navbar-main")
+                ul(class="nav navbar-nav")
+                    li
+                        a(href="/ongs") Portal ONG's
+    div(class="container")
+        block content
