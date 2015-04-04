@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+	h1 Editar
+	form#formAddOng(name="addong",method="post",action="/ongs/updateong")
+		input#inputOngNome(type="text", placeholder="Nome", name="nome", value="#{onglist[0].nome}")
+		br
+		input#inputOngEmail(type="text", placeholder="Email", name="email", value="#{onglist[0].email}")
+		br
+		input#inputOngTelefone(type="text", placeholder="Telefone", name="telefone", value="#{onglist[0].telefone}")
+		br
+		input#inputOngArea(type="text", placeholder="Area", name="area", value="#{onglist[0].area}")
+		br
+		input#inputOngId(type="text", name="id", style="display:none;" value="#{onglist[0]._id}")
+		button#btnSubmit(type="submit") Atualizar

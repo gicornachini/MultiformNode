@@ -1,12 +1,26 @@
 extends ../layout
 
 block content
-    h1.
-        Lista de ONG's Cadastradas
-    hr
-    ul
-        each ong, i in onglist
-            li
-                a(href="mailto:#{ong.email}")= ong.nome
-    hr
-    a(href="/ongs") Voltar
+	h1.
+		Lista de ONG's Cadastradas
+	hr
+	br
+	table
+		thead
+			tr
+				td Nome
+				td Email
+				td Area
+				td Telefone
+				td Ações
+		tbody
+			each ong, i in onglist
+				tr				
+					td #{ong.nome}
+					td #{ong.email}
+					td #{ong.area}
+					td #{ong.telefone}
+					td
+						a(href="/ongs/editar/#{ong._id}") Editar
+	hr
+	a(href="/ongs") Voltar
