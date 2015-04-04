@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+    h1.
+        Lista de ONG's Cadastradas
+    hr
+    ul
+        each ong, i in onglist
+            li
+                a(href="mailto:#{ong.email}")= ong.nome
+    hr
+    a(href="/ongs") Voltar
